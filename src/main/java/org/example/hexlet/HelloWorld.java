@@ -13,7 +13,19 @@ public class HelloWorld {
         app.get("/", ctx -> ctx.result("Hello World"));
         app.get("/users", ctx -> ctx.result("GET /users"));
 
+        app.get("/hello", ctx -> {
+            String name = ctx.queryParam("name");
+
+            if (name == null) {
+                name = "World";
+            }
+
+            ctx.result("Hello, " + name + "!");
+        });
+
         // Стартуем веб-сервер
         app.start(7070);
     }
+
+
 }
