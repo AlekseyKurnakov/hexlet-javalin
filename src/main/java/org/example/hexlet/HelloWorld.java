@@ -23,6 +23,13 @@ public class HelloWorld {
             ctx.result("Hello, " + name + "!");
         });
 
+        app.get("/users/{id}/post/{postId}", ctx -> {
+            String userId = ctx.pathParam("id");
+            String postId = ctx.pathParam("postId");
+            ctx.result("User ID: " + userId + "\n" + "Post ID "  + postId);
+        });
+
+
         // Стартуем веб-сервер
         app.start(7070);
     }
