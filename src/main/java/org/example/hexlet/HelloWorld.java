@@ -17,7 +17,6 @@ public class HelloWorld {
         });
 
         // Описываем, что загрузится по адресу /
-        app.get("/", ctx -> ctx.result("Hello World"));
         app.get("/users", ctx -> ctx.result("GET /users"));
 
         app.get("/hello", ctx -> {
@@ -36,13 +35,16 @@ public class HelloWorld {
             ctx.result("User ID: " + userId + "\n" + "Post ID "  + postId);
         });
 
+        app.get("/", ctx -> {
+            ctx.render("index.jte");
+        });
+
         app.get("/courses", ctx -> {
             List<Course> courses = Data.getCourses();
             String header = "Курсы по программированию";
             CoursesPage page = new CoursesPage(courses, header);
             ctx.render("courses/index.jte", model("page", page));
         });
-
 
 
 
