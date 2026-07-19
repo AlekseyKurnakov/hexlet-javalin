@@ -29,6 +29,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("net.datafaker:datafaker:2.7.0")
     implementation("org.projectlombok:lombok-maven-plugin:1.18.20.0")
+
+    implementation("org.apache.commons:commons-text:1.15.0")
 }
 
 tasks.test {
@@ -42,3 +44,4 @@ tasks.test {
         showStandardStreams = true
     }
 }
+

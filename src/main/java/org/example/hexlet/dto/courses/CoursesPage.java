@@ -6,18 +6,18 @@ import org.example.hexlet.model.Course;
 
 public class CoursesPage {
     private List<Course> courses;
-    private String header;
+    public String term;
 
     public List<Course> getCourses() {
         return courses;
     }
 
-    public String getHeader() {
-        return header;
+    public String getTerm() {
+        return term;
     }
 
-    public CoursesPage(List<Course> courses, String header) {
+    public CoursesPage(List<Course> courses, String term) {
         this.courses = courses;
-        this.header = header;
+        this.term = term;
     }
 }

@@ -5,6 +5,7 @@ import io.javalin.rendering.template.JavalinJte;
 import static io.javalin.rendering.template.TemplateUtil.model;
 import org.example.hexlet.model.Course;
 import org.example.hexlet.dto.courses.CoursesPage;
+import org.apache.commons.text.StringEscapeUtils;
 
 import java.util.List;
 
@@ -29,10 +30,10 @@ public class HelloWorld {
             ctx.result("Hello, " + name + "!");
         });
 
-        app.get("/users/{id}/post/{postId}", ctx -> {
+        app.get("/users/{id}", ctx -> {
             String userId = ctx.pathParam("id");
-            String postId = ctx.pathParam("postId");
-            ctx.result("User ID: " + userId + "\n" + "Post ID "  + postId);
+
+            ctx.render("users/show.jte", model("id", userId));
         });
 
         app.get("/", ctx -> {
@@ -41,8 +42,22 @@ public class HelloWorld {
 
         app.get("/courses", ctx -> {
             List<Course> courses = Data.getCourses();
-            String header = "Курсы по программированию";
-            CoursesPage page = new CoursesPage(courses, header);
+            String term = ctx.queryParam("term");
+
+            if (term == null) {
+                term = "";
+            }
+
+            if (!term.isBlank()) {
+                String search = term.toLowerCase();
+
+                courses = courses.stream()
+                        .filter(course -> course.getName().toLowerCase().contains(search)
+                                || course.getDescription().toLowerCase().contains(search))
+                        .toList();
+            }
+
+            CoursesPage page = new CoursesPage(courses, term);
             ctx.render("courses/index.jte", model("page", page));
         });
 
