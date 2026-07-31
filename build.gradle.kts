@@ -28,7 +28,9 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
     implementation("net.datafaker:datafaker:2.7.0")
-    implementation("org.projectlombok:lombok-maven-plugin:1.18.20.0")
+
+    compileOnly("org.projectlombok:lombok:1.18.34")
+    annotationProcessor("org.projectlombok:lombok:1.18.34")
 
     implementation("org.apache.commons:commons-text:1.15.0")
 }
