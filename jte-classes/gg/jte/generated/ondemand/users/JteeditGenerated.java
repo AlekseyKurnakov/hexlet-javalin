@@ -1,10 +1,10 @@
 package gg.jte.generated.ondemand.users;
 import org.example.hexlet.util.NamedRoutes;
-import org.example.hexlet.dto.users.BuildUserPage;
-public final class JtebuildGenerated {
-	public static final String JTE_NAME = "users/build.jte";
+import org.example.hexlet.dto.users.EditUserPage;
+public final class JteeditGenerated {
+	public static final String JTE_NAME = "users/edit.jte";
 	public static final int[] JTE_LINE_INFO = {0,0,1,2,2,2,4,4,6,6,7,7,9,9,10,10,11,11,11,12,12,13,13,15,15,17,17,17,17,17,17,17,17,17,21,21,21,21,21,21,21,21,21,27,27,27,27,27,27,27,27,27,44,44,44,44,44,2,2,2,2};
-	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, BuildUserPage page) {
+	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, EditUserPage page) {
 		jteOutput.writeContent("\n");
 		gg.jte.generated.ondemand.layout.JtepageGenerated.render(jteOutput, jteHtmlInterceptor, new gg.jte.html.HtmlContent() {
 			public void writeTo(gg.jte.html.HtmlTemplateOutput jteOutput) {
@@ -24,7 +24,7 @@ public final class JtebuildGenerated {
 					jteOutput.writeContent("\n            </ul>\n        ");
 				}
 				jteOutput.writeContent("\n\n        <form");
-				var __jte_html_attribute_0 = NamedRoutes.usersPath();
+				var __jte_html_attribute_0 = NamedRoutes.updateUserPath(page.getId());
 				if (gg.jte.runtime.TemplateUtils.isAttributeRendered(__jte_html_attribute_0)) {
 					jteOutput.writeContent(" action=\"");
 					jteOutput.setContext("form", "action");
@@ -55,7 +55,7 @@ public final class JtebuildGenerated {
 		});
 	}
 	public static void renderMap(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, java.util.Map<String, Object> params) {
-		BuildUserPage page = (BuildUserPage)params.get("page");
+		EditUserPage page = (EditUserPage)params.get("page");
 		render(jteOutput, jteHtmlInterceptor, page);
 	}
 }

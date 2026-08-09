@@ -9,7 +9,7 @@
     </head>
     <body>
         <header>
-            <h1>Hexlet Javalin</h1>
+            <h1>Домашний чат Курнаковых</h1>
             <nav>
                 <a href="/">Главная</a>
             </nav>

@@ -1,6 +1,6 @@
 @import org.example.hexlet.util.NamedRoutes
-@import org.example.hexlet.dto.users.BuildUserPage
-@param BuildUserPage page
+@import org.example.hexlet.dto.users.EditUserPage
+@param EditUserPage page
 
 @template.layout.page(
     content = @`
@@ -14,7 +14,7 @@
             </ul>
         @endif
 
-        <form action="${NamedRoutes.usersPath()}" method="post">
+        <form action="${NamedRoutes.updateUserPath(page.getId())}" method="post">
             <div>
                 <label>
                 Name

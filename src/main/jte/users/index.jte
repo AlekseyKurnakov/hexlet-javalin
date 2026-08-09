@@ -1,14 +1,17 @@
-
+@import org.example.hexlet.util.NamedRoutes
 @import org.example.hexlet.dto.users.UsersPage;
 @param UsersPage page
 
 @template.layout.page(
     content = @`
-        <a href="/users/build">New User</a>
         @for(var user : page.getUsers())
             <div>
-                <a href="/users/${user.getId()}">${user.getName()}</a>
+                <a href="${NamedRoutes.userPath(user.getId())}">${user.getName()}</a>
             </div>
         @endfor
+
+        <div>
+            <a href="${NamedRoutes.buildUserPath()}">Зарегистрироваться</a>
+        </div>
     `
 )
