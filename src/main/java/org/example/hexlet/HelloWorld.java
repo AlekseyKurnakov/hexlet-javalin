@@ -2,6 +2,7 @@ package org.example.hexlet;
 
 import io.javalin.Javalin;
 import io.javalin.rendering.template.JavalinJte;
+import org.example.hexlet.controller.RootController;
 import org.example.hexlet.controller.UsersController;
 import org.example.hexlet.util.NamedRoutes;
 
@@ -21,10 +22,8 @@ public class HelloWorld {
         app.post(NamedRoutes.updateUserPath("{id}"), UsersController::update);
         app.get(NamedRoutes.userPath("{id}"), UsersController::show);
 
+        app.get(NamedRoutes.rootPath(), RootController::index);
 
-        app.get("/", ctx -> {
-            ctx.render("index.jte");
-        });
 
 
         // Стартуем веб-сервер

@@ -1,9 +1,10 @@
 package gg.jte.generated.ondemand;
 import org.example.hexlet.util.NamedRoutes;
+import org.example.hexlet.dto.MainPage;
 public final class JteindexGenerated {
 	public static final String JTE_NAME = "index.jte";
-	public static final int[] JTE_LINE_INFO = {0,0,2,2,2,2,2,4,4,6,6,6,6,6,6,6,6,6,8,8,8,8,8,8,8,8};
-	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor) {
+	public static final int[] JTE_LINE_INFO = {0,0,1,2,2,2,4,4,6,6,8,8,8,8,8,8,8,8,8,11,11,13,13,14,14,14,14,14,2,2,2,2};
+	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, MainPage page) {
 		jteOutput.writeContent("\n");
 		gg.jte.generated.ondemand.layout.JtepageGenerated.render(jteOutput, jteHtmlInterceptor, new gg.jte.html.HtmlContent() {
 			public void writeTo(gg.jte.html.HtmlTemplateOutput jteOutput) {
@@ -16,11 +17,16 @@ public final class JteindexGenerated {
 					jteOutput.setContext("a", null);
 					jteOutput.writeContent("\"");
 				}
-				jteOutput.writeContent(">Все пользователи</a>\n        <p>Добро пожаловать на сайт.</p>\n    ");
+				jteOutput.writeContent(">Все пользователи</a>\n        <p>Добро пожаловать на сайт.</p>\n\n        ");
+				if (!page.isVisited()) {
+					jteOutput.writeContent("\n            Это сообщение показывается только один раз. Если вы хотите увидеть его снова, сотрите куки\n        ");
+				}
+				jteOutput.writeContent("\n    ");
 			}
 		});
 	}
 	public static void renderMap(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, java.util.Map<String, Object> params) {
-		render(jteOutput, jteHtmlInterceptor);
+		MainPage page = (MainPage)params.get("page");
+		render(jteOutput, jteHtmlInterceptor, page);
 	}
 }
