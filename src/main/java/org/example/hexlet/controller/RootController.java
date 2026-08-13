@@ -8,8 +8,9 @@ import static io.javalin.rendering.template.TemplateUtil.model;
 public class RootController {
 
     public static void index(Context ctx) {
-        var visited = Boolean.valueOf(ctx.cookie("visited"));
-        var page = new MainPage(visited);
+        Boolean visited = Boolean.valueOf(ctx.cookie("visited"));
+        String currentUser = ctx.sessionAttribute("currentUser");
+        MainPage page = new MainPage(visited, currentUser);
 
         ctx.render("index.jte", model("page", page));
 

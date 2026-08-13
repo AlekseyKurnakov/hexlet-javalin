@@ -41,4 +41,11 @@ public class UserRepository {
     public static List<User> getEntities() {
         return entities;
     }
+
+    public static Optional<User> findByNickname(String nickname) {
+        Optional<User> maybeUser = entities.stream()
+                .filter(entity -> entity.getName().equals(nickname))
+                .findAny();
+        return maybeUser;
+    }
 }
