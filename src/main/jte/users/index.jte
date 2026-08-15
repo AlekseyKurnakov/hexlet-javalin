@@ -3,6 +3,7 @@
 @param UsersPage page
 
 @template.layout.page(
+    page = page,
     content = @`
         @for(var user : page.getUsers())
             <div>

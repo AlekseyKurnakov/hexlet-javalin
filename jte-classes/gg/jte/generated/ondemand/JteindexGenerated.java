@@ -43,7 +43,7 @@ public final class JteindexGenerated {
 				}
 				jteOutput.writeContent("\n    ");
 			}
-		});
+		}, null);
 	}
 	public static void renderMap(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, java.util.Map<String, Object> params) {
 		MainPage page = (MainPage)params.get("page");

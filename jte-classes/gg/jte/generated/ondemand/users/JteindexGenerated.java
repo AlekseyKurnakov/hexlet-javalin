@@ -3,7 +3,7 @@ import org.example.hexlet.util.NamedRoutes;
 import org.example.hexlet.dto.users.UsersPage;;
 public final class JteindexGenerated {
 	public static final String JTE_NAME = "users/index.jte";
-	public static final int[] JTE_LINE_INFO = {0,0,1,2,2,2,4,4,6,6,7,7,9,9,9,9,9,9,9,9,9,9,9,9,11,11,14,14,14,14,14,14,14,14,14,16,16,16,16,16,2,2,2,2};
+	public static final int[] JTE_LINE_INFO = {0,0,1,2,2,2,4,4,7,7,8,8,10,10,10,10,10,10,10,10,10,10,10,10,12,12,15,15,15,15,15,15,15,15,15,17,17,17,17,17,2,2,2,2};
 	public static void render(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, UsersPage page) {
 		jteOutput.writeContent("\n");
 		gg.jte.generated.ondemand.layout.JtepageGenerated.render(jteOutput, jteHtmlInterceptor, new gg.jte.html.HtmlContent() {
@@ -35,7 +35,7 @@ public final class JteindexGenerated {
 				}
 				jteOutput.writeContent(">Зарегистрироваться</a>\n        </div>\n    ");
 			}
-		});
+		}, page);
 	}
 	public static void renderMap(gg.jte.html.HtmlTemplateOutput jteOutput, gg.jte.html.HtmlInterceptor jteHtmlInterceptor, java.util.Map<String, Object> params) {
 		UsersPage page = (UsersPage)params.get("page");
