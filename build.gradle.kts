@@ -33,6 +33,9 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.34")
 
     implementation("org.apache.commons:commons-text:1.15.0")
+
+    implementation("com.h2database:h2:2.2.220")
+    implementation("com.zaxxer:HikariCP:5.0.1")
 }
 
 tasks.test {

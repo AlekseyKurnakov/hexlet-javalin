@@ -17,7 +17,6 @@ public final class User {
 
     private String email;
     private String password;
-    private LocalDateTime createdAt;
 
     public User(String name, String email, String password) {
         this.name = name;

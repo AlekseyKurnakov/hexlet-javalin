@@ -7,18 +7,19 @@ import org.example.hexlet.dto.sessions.BuildSessionPage;
 import org.example.hexlet.model.User;
 import org.example.hexlet.repository.UserRepository;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import static io.javalin.rendering.template.TemplateUtil.model;
 
 public class SessionsController {
 
-    public static void build(Context ctx) {
+    public static void build(Context ctx) throws SQLException{
         var page = new BuildSessionPage();
         ctx.render("sessions/build.jte", model("page", page));
     }
 
-    public static void create(Context ctx) {
+    public static void create(Context ctx) throws SQLException {
 
         String nickname = ctx.formParam("nickname").trim();
 
